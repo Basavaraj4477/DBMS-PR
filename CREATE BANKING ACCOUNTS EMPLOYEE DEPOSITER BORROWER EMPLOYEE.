@@ -338,5 +338,18 @@ mysql> select*from employee;
 | ADITYA          | hubli       |  500000 |
 +-----------------+-------------+---------+
 3 rows in set (0.00 sec)
+mysql> rename table employee to emp;
+Query OK, 0 rows affected (0.08 sec)
 
+mysql> select*from employee;
+ERROR 1146 (42S02): Table 'university.employee' doesn't exist
+mysql> select*from emp;
++-----------------+-------------+---------+
+| employee_name   | branch_name | salaray |
++-----------------+-------------+---------+
+| basavaraj       | shorapur    | 1500000 |
+| KEERTHAN SHETTY | udupi       | 8000000 |
+| ADITYA          | hubli       |  500000 |
++-----------------+-------------+---------+
+3 rows in set (0.00 sec)
 
