@@ -353,3 +353,53 @@ mysql> select*from emp;
 +-----------------+-------------+---------+
 3 rows in set (0.00 sec)
 
+mysql> select branch_name from emp;
++-------------+
+| branch_name |
++-------------+
+| shorapur    |
+| udupi       |
+| hubli       |
++-------------+
+3 rows in set (0.00 sec)
+
+mysql> select*from emp;
++-----------------+-------------+---------+
+| employee_name   | branch_name | salaray |
++-----------------+-------------+---------+
+| basavaraj       | shorapur    | 1500000 |
+| KEERTHAN SHETTY | udupi       | 8000000 |
+| ADITYA          | hubli       |  500000 |
++-----------------+-------------+---------+
+3 rows in set (0.00 sec)
+
+mysql> delete employee_name from employee where salary=500000;
+ERROR 1109 (42S02): Unknown table 'employee_name' in MULTI DELETE
+mysql> delete employee_name from emp where salary=500000;
+ERROR 1109 (42S02): Unknown table 'employee_name' in MULTI DELETE
+mysql> delete from emp where employee_name='ADITYA';
+Query OK, 1 row affected (0.05 sec)
+
+mysql> select*from emp;
++-----------------+-------------+---------+
+| employee_name   | branch_name | salaray |
++-----------------+-------------+---------+
+| basavaraj       | shorapur    | 1500000 |
+| KEERTHAN SHETTY | udupi       | 8000000 |
++-----------------+-------------+---------+
+2 rows in set (0.00 sec)
+
+mysql> truncate table borrwer;
+ERROR 1146 (42S02): Table 'university.borrwer' doesn't exist
+mysql> truncate table borrower;
+Query OK, 0 rows affected (0.06 sec)
+
+mysql> desc borrower;
++----------------+----------+------+-----+---------+-------+
+| Field          | Type     | Null | Key | Default | Extra |
++----------------+----------+------+-----+---------+-------+
+| coustomer_name | char(20) | YES  |     | NULL    |       |
+| loan_number    | int(11)  | YES  |     | NULL    |       |
+| loan_amount    | int(11)  | YES  |     | NULL    |       |
++----------------+----------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
